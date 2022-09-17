@@ -23,7 +23,18 @@ export default function Game() {
   const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState();
   const [photo, setPhoto] = useState();
   const [isPlaying, setIsPlaying] = React.useState(true)
-  const [image, setImage] = React.useState('/Users/ataesaggarwal/code/copycat/app/emotion_images/surprise/surprised_person_1.jpeg')
+  // const [image, setImage] = React.useState('./app/emotion_images/sad/sad_person_1.jpeg')
+  // const [emotionTarget, setEmotionTarget] =  React.useState('happy')
+  random_index = Math.floor(Math.random() * 7)  
+  const emotion_vector = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
+  console.log(random_index)
+  const string = emotion_vector[0]
+  const emotion_target = string
+  // emotion_target = emotion_vector[random_index]
+  console.log(typeof(emotion_target))
+  console.log()
+  console.log(typeof(emotion_vector[random_index]))
+
 
   useEffect(() => {
     (async () => {
@@ -44,6 +55,11 @@ export default function Game() {
     );
   }
 
+  const changePic = () => {
+    random_index = Math.floor(Math.random() * 7)
+    emotion_target = emotion_vector[random_index]
+    console.log(emotion_target)
+  }
   let takePic = async () => {
     let options = {
       quality: 1,
@@ -85,6 +101,8 @@ export default function Game() {
     );
   }
 
+  // '../emotion_images/' + 'happy' + '/' + 1 +'.jpeg'
+
   return (
     <View>
       <CountdownCircleTimer
@@ -98,16 +116,20 @@ export default function Game() {
           <Text style={{ color, fontSize: 40 }}>{remainingTime}</Text>
         )}
       </CountdownCircleTimer>
-      {image && <Image source={require('/Users/ataesaggarwal/code/copycat/app/emotion_images/surprise/surprised_person_1.jpeg')} style={{ width: 180, height: 180 }} />}
+      {<Image source={require('../emotion_images/' + 'sad' + '/' + 1 + '.jpeg')} style={{ width: 180, height: 180 }} />}
       <Camera style={styles.container} ref={cameraRef} type={type}>
         <View style={styles.buttonContainer}>
-          <Button title="Take Pic" onPress={takePic} />
+          <Button onPress={changePic} title="Take Pic" onPress={takePic} />
         </View>
         <StatusBar style="auto" />
       </Camera>
     </View>
   );
 }
+
+//'../emotion_images/' + 'happy' + '/' + 1 + '.jpeg'
+// /Users/ataesaggarwal/code/copycat/app/emotion_images/happy/1.jpeg
+// /Users/ataesaggarwal/code/copycat/app/emotion_images/neutral/1.jpeg
 
 const styles = StyleSheet.create({
   container: {
