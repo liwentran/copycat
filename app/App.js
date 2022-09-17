@@ -20,11 +20,12 @@
 // });
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
+//import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
+import Game from './screens/Game'
 // import AddToDatabase from './screens/HomeScreen.js';
 
 const navigator = createStackNavigator({
-  Home: HomeScreen,
+  Home: Game,
 }, 
 {
   initialRouteName: 'Home',

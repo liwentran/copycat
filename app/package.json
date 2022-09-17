@@ -11,11 +11,15 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.13",
     "expo": "~46.0.9",
+    "expo-camera": "^12.3.0",
     "expo-image-picker": "^13.3.1",
+    "expo-media-library": "^14.2.0",
     "expo-permissions": "^13.2.0",
+    "expo-sharing": "^10.3.0",
     "expo-status-bar": "~1.4.0",
     "react": "18.0.0",
     "react-native": "0.69.5",
+    "react-native-camera": "^4.2.1",
     "react-native-image-picker": "^4.10.0",
     "react-navigation": "^4.4.4",
     "react-navigation-stack": "^2.10.4"
