@@ -72,6 +72,11 @@ export default function Game() {
     );
   }
 
+  const changePic = () => {
+    random_index = Math.floor(Math.random() * 7)
+    emotion_target = emotion_vector[random_index]
+    console.log(emotion_target)
+  }
   let takePic = async () => {
     let options = {
       quality: 1,
