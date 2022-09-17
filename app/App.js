@@ -30,6 +30,7 @@ import Home from './screens/Home'
 
 const navigator = createStackNavigator({
   Home: Home,
+  Game: Game
 }, 
 {
   initialRouteName: 'Home',

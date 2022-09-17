@@ -1,12 +1,12 @@
 import React from "react";
-import { ImageBackground, Image, StyleSheet, Text, TouchableOpacity, View, Dimensions } from "react-native";
+import { ImageBackground, Image, StyleSheet, TouchableOpacity, View, Dimensions } from "react-native";
 
 
-export default function Home(){
+export default function Home(props){
     return(
   <View style={styles.container}>
     <ImageBackground source={require("../assets/home-bg.png")} resizeMode="cover" style={styles.bg}>
-        <TouchableOpacity onPress={()=>{alert("you clicked me")}}>
+        <TouchableOpacity onPress={() => {props.navigation.navigate('Game')}}>
             <Image source={require("../assets/Play.png")} resizeMode="contain" style={styles.image}>
             </Image>
         </TouchableOpacity>

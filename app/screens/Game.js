@@ -98,7 +98,7 @@ export default function Game() {
           <Text style={{ color, fontSize: 40 }}>{remainingTime}</Text>
         )}
       </CountdownCircleTimer>
-      {image && <Image source={require('/Users/ataesaggarwal/code/copycat/app/emotion_images/surprise/surprised_person_1.jpeg')} style={{ width: 180, height: 180 }} />}
+      {image && <Image source={require('../emotion_images/surprise/surprised_person_1.jpeg')} style={{ width: 180, height: 180 }} />}
       <Camera style={styles.container} ref={cameraRef} type={type}>
         <View style={styles.buttonContainer}>
           <Button title="Take Pic" onPress={takePic} />
