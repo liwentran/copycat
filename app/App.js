@@ -22,7 +22,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 //import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
 import Game from './screens/Game'
-import Home from './screens/Home'
+import Home from './screens/TestFaceAI/FaceAI'
 // import AddToDatabase from './screens/HomeScreen.js';
 
 
