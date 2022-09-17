@@ -32,13 +32,13 @@ export default function Game() {
 
   //ImageArray
   const imgArr = [
-    require('../emotion_images/happy/happy_person_1.jpeg'),
-    require('../emotion_images/sad/sad_person_1.jpeg'),
-    require('../emotion_images/surprise/surprised_person_1.jpeg'),
-    require('../emotion_images/angry/angry_person_1.jpeg'),
-    require('../emotion_images/fear/scared_person_1.jpeg'),
-    require('../emotion_images/disgust/disgusted_person_1.jpeg'),
-    require('../emotion_images/neutral/neutral_person_1.jpeg'),
+    require('../emotion_images/happy/1.jpeg'),
+    require('../emotion_images/sad/1.jpeg'),
+    require('../emotion_images/surprise/1.jpeg'),
+    require('../emotion_images/angry/1.jpeg'),
+    require('../emotion_images/fear/1.jpeg'),
+    require('../emotion_images/disgust/1.jpeg'),
+    require('../emotion_images/neutral/1.jpeg'),
   ];
 
   //CorrespondingAnswersArray: 0 = happy, 1 = sad, 2 = surprised, 3 = confused, 4 = fear, 5 = disgust, 6 = nuetral
