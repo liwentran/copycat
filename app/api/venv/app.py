@@ -1,7 +1,12 @@
 from flask import Flask, jsonify, request
 import numpy as np
 from PIL import Image
-from fer import FER
+
+import cv2
+from deepface import DeepFace
+import numpy as np 
+
+# from fer import FER
 # import matplotlib.pyplot as plt
 # import tensorflow
 
@@ -17,8 +22,11 @@ def home():
 @app.route('/posting', methods=['POST'])
 def something():
 
-    # file = request.files['image']
-    # img = Image.open(file.stream)
+    file = request.files['image']
+    img = Image.open(file.stream)
+
+    analyze = DeepFace.analyze(img,actions=['emotion'])
+    print(analyze)
 
     # test_image_one = plt.imread(img)
     # emo_detector = FER(mtcnn=True)

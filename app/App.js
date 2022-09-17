@@ -24,6 +24,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Game from './screens/Game'
 // import AddToDatabase from './screens/HomeScreen.js';
 
+
+// AppRegistry.registerComponent('X', () => App);
+
 const navigator = createStackNavigator({
   Home: Game,
 }, 
