@@ -62,12 +62,13 @@ import React, { useState, useEffect } from 'react';
 import { Text, Button, Image, View, Platform, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
+import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
 
 
 export default function ImagePickerExample(props) {
   const [image, setImage] = useState(null);
   const [displayHelloWorld, setdisplayHelloWorld] = useState("");
-  const[probability, setProbability] = useState();
+  const[probability, setProbability] = useState('');
   const [pickedImagePath, setPickedImagePath] = useState('');
 
 
@@ -194,7 +195,8 @@ form.append("image", photo);
             body: form, 
             method: 'POST',
           }).then(res => res.json()).then(data => {
-            setProbability(parseFloat(data.hello).toFixed(3)*100)
+            // setProbability(parseFloat(data.hello).toFixed(3)*100)
+            setProbability(data.hello)
           });         
         }}>
         <Text style={styles.buttonText}>Analyze Image</Text>
@@ -212,7 +214,7 @@ form.append("image", photo);
           />
         }
       </View>
-      
+    
       {/* <TouchableOpacity style={styles.button} onPress={() => {props.navigation.navigate('Database')}}>
         <Text style={styles.buttonText}>Add Image To Database</Text>
       </TouchableOpacity> */}
