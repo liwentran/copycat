@@ -23,6 +23,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
 // import AddToDatabase from './screens/HomeScreen.js';
 
+
+// AppRegistry.registerComponent('X', () => App);
+
 const navigator = createStackNavigator({
   Home: HomeScreen,
 }, 
