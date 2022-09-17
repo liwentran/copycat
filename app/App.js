@@ -22,13 +22,15 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 //import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
 import Game from './screens/Game'
+import Home from './screens/Home'
 // import AddToDatabase from './screens/HomeScreen.js';
 
 
 // AppRegistry.registerComponent('X', () => App);
 
 const navigator = createStackNavigator({
-  Home: Game,
+  Home: Home,
+  Game: Game
 }, 
 {
   initialRouteName: 'Home',
