@@ -23,6 +23,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 //import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
 import Game from './screens/Game'
 import Home from './screens/Home'
+import End from './screens/End'
 // import AddToDatabase from './screens/HomeScreen.js';
 
 
@@ -30,7 +31,8 @@ import Home from './screens/Home'
 
 const navigator = createStackNavigator({
   Home: Home,
-  Game: Game
+  Game: Game,
+  End: End
 }, 
 {
   initialRouteName: 'Home',
