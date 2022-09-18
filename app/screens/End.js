@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ImageBackground, Image, StyleSheet, TouchableOpacity, View, Dimensions, Text } from "react-native";
 
 
-export default function End(props) {
+export default function End(props, correctAnswers) {
 
 
   const emotions = [];
@@ -17,7 +17,7 @@ export default function End(props) {
   }, []);
 
   // Dictionary of correct answers (filename : emotion)
-  let correctAnswers = {"img1.png": "sad", "img2.png": "happy", "img4.png": "happy", "img5.png": "happy", "img6.png": "happy"};
+  correctAnswers = {"img1.png": "sad", "img2.png": "happy", "img4.png": "happy", "img5.png": "happy", "img6.png": "happy"};
   let correct = {"happy": 0, "sad": 0, "anger": 0, "disgust": 0, "surprise": 0, "fear": 0, "neutral": 0};
   let total = {"happy": 0, "sad": 0, "anger": 0, "disgust": 0, "surprise": 0, "fear": 0, "neutral": 0};
 

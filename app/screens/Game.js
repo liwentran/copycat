@@ -33,15 +33,38 @@ export default function Game(props) {
   //ImageArray
   const imgArr = [
     require('../emotion_images/happy/1.jpeg'),
+    require('../emotion_images/happy/2.jpeg'),
+    require('../emotion_images/happy/3.jpeg'),
+    require('../emotion_images/happy/4.jpeg'),
     require('../emotion_images/sad/1.jpeg'),
+    require('../emotion_images/sad/2.png'),
+    require('../emotion_images/sad/3.png'),
+    require('../emotion_images/sad/4.jpeg'),
     require('../emotion_images/surprise/1.jpeg'),
+    require('../emotion_images/surprise/2.jpeg'),
+    require('../emotion_images/surprise/3.png'),
+    require('../emotion_images/surprise/4.png'),
     require('../emotion_images/angry/1.jpeg'),
+    require('../emotion_images/angry/2.jpeg'),
+    require('../emotion_images/angry/3.jpeg'),
+    require('../emotion_images/angry/4.jpeg'),
     require('../emotion_images/fear/1.jpeg'),
+    require('../emotion_images/fear/2.jpeg'),
+    require('../emotion_images/fear/3.png'),
+    require('../emotion_images/fear/4.jpeg'),
     require('../emotion_images/disgust/1.jpeg'),
+    require('../emotion_images/disgust/2.jpeg'),
+    require('../emotion_images/disgust/3.jpeg'),
+    require('../emotion_images/disgust/4.jpeg'),
     require('../emotion_images/neutral/1.jpeg'),
+    require('../emotion_images/neutral/2.png'),
+    require('../emotion_images/neutral/3.png'),
+    require('../emotion_images/neutral/4.png'),
   ];
 
-  //everytime a photo is taken, we need to add the sent image name and prompt answer to the dictionary
+  //everytime a photo is taken, we need to add the sent image name and prompt answer to the dictionary, then pass it to end.js on navigation
+  let correctAnswers = {}; 
+
   //CorrespondingAnswersArray: 0 = happy, 1 = sad, 2 = surprised, 3 = confused, 4 = fear, 5 = disgust, 6 = nuetral
   const ansArr = [
     0, 1, 2, 3, 4, 5, 6
@@ -110,11 +133,11 @@ export default function Game(props) {
     <View style={styles.view}>
       <CountdownCircleTimer
         isPlaying={isPlaying}
-        duration={5}
+        duration={20}
         colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
         colorsTime={[10, 6, 3, 0]}
         size={80}
-        onComplete={() => {props.navigation.navigate('End')}
+        onComplete={() => {props.navigation.navigate('End', correctAnswers)}
       }
       >
         {({ remainingTime, color }) => (
