@@ -23,10 +23,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 //import HomeScreen from '/Users/ataesaggarwal/code/copycat/app/screens/HomeScreen.js';
 import Game from './screens/Game'
 import Home from './screens/Home'
-<<<<<<< HEAD
-=======
 import End from './screens/End'
->>>>>>> 5604e99c1a7c37f86c8478f013d48f6f534ec841
 // import AddToDatabase from './screens/HomeScreen.js';
 
 

@@ -28,33 +28,31 @@ import disgust1 from '../emotion_images/disgust/disgusted_person_1.jpeg';
 import neutral1 from '../emotion_images/neutral/neutral_person_1.jpeg';
 */
 
-<<<<<<< HEAD
-export default function Game() {
-=======
 export default function Game(props) {
 
->>>>>>> 5604e99c1a7c37f86c8478f013d48f6f534ec841
   //ImageArray
   const imgArr = [
-    require("../emotion_images/happy/1.jpeg"),
-    require("../emotion_images/sad/1.jpeg"),
-    require("../emotion_images/surprise/1.jpeg"),
-    require("../emotion_images/angry/1.jpeg"),
-    require("../emotion_images/fear/1.jpeg"),
-    require("../emotion_images/disgust/1.jpeg"),
-    require("../emotion_images/neutral/1.jpeg")
+    require('../emotion_images/happy/1.jpeg'),
+    require('../emotion_images/sad/1.jpeg'),
+    require('../emotion_images/surprise/1.jpeg'),
+    require('../emotion_images/angry/1.jpeg'),
+    require('../emotion_images/fear/1.jpeg'),
+    require('../emotion_images/disgust/1.jpeg'),
+    require('../emotion_images/neutral/1.jpeg'),
   ];
 
+  //everytime a photo is taken, we need to add the sent image name and prompt answer to the dictionary
   //CorrespondingAnswersArray: 0 = happy, 1 = sad, 2 = surprised, 3 = confused, 4 = fear, 5 = disgust, 6 = nuetral
-  const ansArr = [0, 1, 2, 3, 4, 5, 6];
+  const ansArr = [
+    0, 1, 2, 3, 4, 5, 6
+  ];
 
   const [type] = useState(CameraType.front);
   let cameraRef = useRef();
   const [hasCameraPermission, setHasCameraPermission] = useState();
   const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState();
   const [photo, setPhoto] = useState();
-  const [isPlaying, setIsPlaying] = React.useState(true);
-  const [image, setImage] = useState(null);
+  const [isPlaying, setIsPlaying] = React.useState(true)
 
   useEffect(() => {
     (async () => {
@@ -147,19 +145,13 @@ export default function Game(props) {
           <Text style={{ color, fontSize: 30 }}>{remainingTime}</Text>
         )}
       </CountdownCircleTimer>
-      <Image
-        source={imgArr[Math.floor(Math.random() * imgArr.length)]}
-        style={styles.image}
-      />
+      <Image source={imgArr[Math.floor(Math.random() * imgArr.length)]} style={styles.image} />
       <Camera style={styles.container} ref={cameraRef} type={type}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={takePic}>
-            <Image
-              source={require("../assets/shutter.png")}
-              resizeMode="contain"
-              style={styles.shutter}
-            ></Image>
-          </TouchableOpacity>
+        <TouchableOpacity onPress={takePic}>
+            <Image source={require("../assets/shutter.png")} resizeMode="contain" style={styles.shutter}>
+            </Image>
+        </TouchableOpacity>
         </View>
         <StatusBar style="auto" />
       </Camera>
