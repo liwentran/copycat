@@ -5,7 +5,6 @@ import { ImageBackground, Image, StyleSheet, TouchableOpacity, View, Dimensions,
 export default function End(props, correctAnswers) {
 
 
-  const emotions = [];
   const [userAnswers, setUserAnswers] = useState({});
 
   useEffect(() => {
@@ -15,15 +14,25 @@ export default function End(props, correctAnswers) {
       setUserAnswers(data.body);
     });
   }, []);
+  
 
   // Dictionary of correct answers (filename : emotion)
-  correctAnswers = {"img1.png": "sad", "img2.png": "happy", "img4.png": "happy", "img5.png": "happy", "img6.png": "happy"};
+  let answers = {"img1.jpg": "happy", "img2.jpg": "sad", "img3.jpg": "happy",  "img4.jpg": "surprise",  "img5.jpg": "happy",  "img6.jpg": "fear",  "img7.jpg" : "disgust",
+  "img8.jpg": "anger", "img9.jpg": "sad", "img10.jpg": "anger",  "img11.jpg": "anger",  "img12.jpg": "happy",  "img13.jpg": "fear",  "img14.jpg" : "disgust",
+  "img15.jpg": "happy", "img16.jpg": "neutral", "img17.jpg": "happy",  "img18.jpg": "surprise",  "img19.jpg": "neutral",  "img20.jpg": "fear",  "img21.jpg" : "disgust",
+  }
+
+  correctAnswers = {"img1.jpg": "happy", "img2.jpg": "happy", "img3.jpg": "happy",  "img4.jpg": "surprise",  "img5.jpg": "happy",  "img6.jpg": "happy",  "img7.jpg" : "disgust",
+  "img8.jpg": "surprise", "img9.jpg": "sad", "img10.jpg": "happy",  "img11.jpg": "anger",  "img12.jpg": "happy",  "img13.jpg": "fear",  "img14.jpg" : "disgust",
+  "img15.jpg": "disgust", "img16.jpg": "anger", "img17.jpg": "sad",  "img18.jpg": "neutral",  "img19.jpg": "neutral",  "img20.jpg": "fear",  "img21.jpg" : "disgust",
+  }
+
   let correct = {"happy": 0, "sad": 0, "anger": 0, "disgust": 0, "surprise": 0, "fear": 0, "neutral": 0};
   let total = {"happy": 0, "sad": 0, "anger": 0, "disgust": 0, "surprise": 0, "fear": 0, "neutral": 0};
 
   let score = 0;
-  for (let filename in userAnswers) {
-    if (correctAnswers[filename] == userAnswers[filename]){
+  for (let filename in answers) {
+    if (correctAnswers[filename] == answers[filename]){
       correct[correctAnswers[filename]]++;
       score++;
     }
