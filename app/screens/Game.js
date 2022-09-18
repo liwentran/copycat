@@ -28,7 +28,12 @@ import disgust1 from '../emotion_images/disgust/disgusted_person_1.jpeg';
 import neutral1 from '../emotion_images/neutral/neutral_person_1.jpeg';
 */
 
+<<<<<<< HEAD
 export default function Game() {
+=======
+export default function Game(props) {
+
+>>>>>>> 5604e99c1a7c37f86c8478f013d48f6f534ec841
   //ImageArray
   const imgArr = [
     require("../emotion_images/happy/1.jpeg"),
@@ -131,11 +136,12 @@ export default function Game() {
     <View style={styles.view}>
       <CountdownCircleTimer
         isPlaying={isPlaying}
-        duration={60}
+        duration={5}
         colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
         colorsTime={[10, 6, 3, 0]}
         size={80}
-        onComplete={() => ({ shouldRepeat: false, delay: 2 })}
+        onComplete={() => {props.navigation.navigate('End')}
+      }
       >
         {({ remainingTime, color }) => (
           <Text style={{ color, fontSize: 30 }}>{remainingTime}</Text>
