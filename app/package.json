@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.13",
+    "axios": "^0.27.2",
     "expo": "~46.0.9",
     "expo-camera": "^12.3.0",
     "expo-constants": "^13.2.4",
