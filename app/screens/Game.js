@@ -105,30 +105,6 @@ export default function Game(props) {
     fetch('https://145r4m1ida.execute-api.us-east-1.amazonaws.com/v1/copycat-deepface/img13.png', requestOptions)
     .then(response => response.json())
     .then(data => console.log(data));
-
-    let sharePic = () => {
-      shareAsync(photo.uri).then(() => {
-        setPhoto(undefined);
-      });
-    };
-
-    let savePhoto = () => {
-      MediaLibrary.saveToLibraryAsync(photo.uri).then(() => {
-        setPhoto(undefined);
-      });
-    };
-
-    return (
-      <SafeAreaView style={styles.container}>
-        <Image
-          style={styles.preview}
-          source={{ uri: "data:image/jpg;base64," + photo.base64}} //uri: "data:image/jpg;base64," + photo.base64
-        />
-        <Button title="Share" />
-        {hasMediaLibraryPermission ? <Button title="Save" /> : undefined}
-        <Button title="Discard" onPress={() => setPhoto(undefined)} />
-      </SafeAreaView>
-    );
   }
   return (
     <View style={styles.view}>
