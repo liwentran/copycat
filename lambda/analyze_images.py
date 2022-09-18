@@ -36,7 +36,10 @@ def lambda_handler(event, context):
         im = Image.open(BytesIO(file_byte_string))
 
         # analyze
-        emotion = DeepFace.analyze(img_path = '/mnt/tf/happy.jpg', actions = ["emotion"])
+        emotion = DeepFace.analyze(im, actions = ["emotion"]) 
+        print(emotion)
+        print(emotion['dominant_emotion'])
+        
         result[o.key] = emotion['dominant_emotion']
     
     # store results in a file named result.json
